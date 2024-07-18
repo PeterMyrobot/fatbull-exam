@@ -1,8 +1,14 @@
 'use client';
 
+import { useState } from 'react';
+
 import Button from '@/components/Button';
+import Input from '@/components/Input';
 
 export default function Home() {
+  const [value, setValue] = useState('');
+  const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setValue(e.target.value);
   return (
     <div>
       Hello
@@ -21,6 +27,7 @@ export default function Home() {
         variant="contained"
         onClickHandler={() => console.log('clicked')}
       />
+      <Input value={value} onChange={onInputChange} />
     </div>
   );
 }
