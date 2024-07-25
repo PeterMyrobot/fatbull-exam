@@ -10,9 +10,9 @@ const config: Config = {
     colors: {
       transparent: 'transparent',
       black: '#121212',
+      blackLight: '#1B1B1B',
       white: '#fff',
       orange: '#FF9B33',
-      gray50: '#FFFFFF80',
     },
     extend: {
       lineHeight: {
