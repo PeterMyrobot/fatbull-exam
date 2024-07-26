@@ -18,8 +18,4 @@ function Input({ value, placeholder, onChange }: InputProps) {
   );
 }
 
-Input.defaultProps = {
-  placeholder: 'input',
-};
-
 export default Input;

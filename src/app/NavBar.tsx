@@ -10,7 +10,7 @@ type NavIconProps = {
 };
 
 function NavIcon(props: NavIconProps) {
-  const { className } = props;
+  const { className = '' } = props;
   return (
     <svg
       width={20}
@@ -28,10 +28,6 @@ function NavIcon(props: NavIconProps) {
     </svg>
   );
 }
-
-NavIcon.defaultProps = {
-  className: '',
-};
 
 function NavBar() {
   const pathname = usePathname();
