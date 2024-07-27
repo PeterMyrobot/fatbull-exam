@@ -40,11 +40,11 @@ function NavBar() {
   ];
 
   return (
-    <div className="bg-blackLight relative h-full w-20">
+    <div className="relative h-full w-20 bg-blackLight">
       <div className="flex h-[88px] w-full">
         <Image
           className="m-auto"
-          src="./assets/logo.svg"
+          src="./assets/svgs/logo.svg"
           alt="logo"
           width={35}
           height={15}
