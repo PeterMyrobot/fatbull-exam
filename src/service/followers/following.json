@@ -1,0 +1,78 @@
+{
+  "total": 51,
+  "totalPages": 6,
+  "page": 1,
+  "pageSize": 10,
+  "data": [
+    {
+      "id": "f2d185b7-d6ca-46a5-9910-87296e557ac5",
+      "name": "Joaquin Schoen",
+      "username": "Sammie44",
+      "avater": "https://cdn.fakercloud.com/avatars/j04ntoh_128.jpg",
+      "isFollowing": true
+    },
+    {
+      "id": "f682af5d-f278-4133-b75d-7175d4a407a2",
+      "name": "Nellie Christiansen",
+      "username": "Yasmeen3",
+      "avater": "https://cdn.fakercloud.com/avatars/nilshelmersson_128.jpg",
+      "isFollowing": true
+    },
+    {
+      "id": "f7832298-2989-40b8-aba7-b9953d858e85",
+      "name": "Kailee Miller",
+      "username": "Beaulah_Abbott15",
+      "avater": "https://cdn.fakercloud.com/avatars/namankreative_128.jpg",
+      "isFollowing": true
+    },
+    {
+      "id": "fc2761ef-5c60-4cd8-90d2-c0faa053f94f",
+      "name": "Ulices Nitzsche",
+      "username": "Laverne27",
+      "avater": "https://cdn.fakercloud.com/avatars/herkulano_128.jpg",
+      "isFollowing": true
+    },
+    {
+      "id": "1c2aee34-bf1f-4360-a631-2750070613b2",
+      "name": "Eliezer Lockman",
+      "username": "Hollie.Cummings5",
+      "avater": "https://cdn.fakercloud.com/avatars/jacksonlatka_128.jpg",
+      "isFollowing": true
+    },
+    {
+      "id": "4192226c-f08e-4d91-b125-5ed4edbc60d8",
+      "name": "Bernita Bradtke",
+      "username": "Kenton_Cole",
+      "avater": "https://cdn.fakercloud.com/avatars/curiousoffice_128.jpg",
+      "isFollowing": true
+    },
+    {
+      "id": "523db58f-1a2b-4a68-8e28-c1bf86c8d7e5",
+      "name": "Sarai Hilll",
+      "username": "Corrine_Johnston",
+      "avater": "https://cdn.fakercloud.com/avatars/thekevinjones_128.jpg",
+      "isFollowing": true
+    },
+    {
+      "id": "fb243a8d-7fa5-47cc-b88b-24a7a4861894",
+      "name": "Hal Cartwright",
+      "username": "Jedidiah44",
+      "avater": "https://cdn.fakercloud.com/avatars/fiterik_128.jpg",
+      "isFollowing": true
+    },
+    {
+      "id": "c24a0dae-5f3c-43ca-88d0-7bd82cec49fd",
+      "name": "Ariel Hudson",
+      "username": "Kariane49",
+      "avater": "https://cdn.fakercloud.com/avatars/thibaut_re_128.jpg",
+      "isFollowing": true
+    },
+    {
+      "id": "ea7556eb-76c0-400f-9568-6f8da3ce425b",
+      "name": "Roman Mills",
+      "username": "Junior_Hills55",
+      "avater": "https://cdn.fakercloud.com/avatars/mactopus_128.jpg",
+      "isFollowing": true
+    }
+  ]
+}
