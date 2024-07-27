@@ -3,6 +3,7 @@ import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import Input from './Input';
 import Button from './Button';
 import NonLinearSlider from './NonLinearSlider';
+import Divider from './Divider';
 
 export type FormValues = {
   keyword: string;
@@ -10,17 +11,18 @@ export type FormValues = {
 };
 
 function SearchFrom() {
-  const { handleSubmit, control } = useForm<FormValues>({
+  const { handleSubmit, control, watch } = useForm<FormValues>({
     defaultValues: {
       keyword: '',
       resultsPerPage: 12,
     },
   });
+  const currentResultsPerPage = watch('resultsPerPage');
   const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data);
   return (
-    <div>
-      <form>
-        <h1 className="text-2xl leading-9">Search</h1>
+    <form className="flex h-full flex-col">
+      <div className="flex-1">
+        <h1 className="mb-5 text-2xl leading-9">Search</h1>
         <Controller
           name="keyword"
           control={control}
@@ -28,6 +30,10 @@ function SearchFrom() {
             <Input value={value} onChange={onChange} placeholder={name} />
           )}
         />
+        <Divider />
+        <h1 className="text-2xl leading-9"># of results per page</h1>
+        <span>{currentResultsPerPage}</span>
+        <span>results</span>
         <Controller
           name="resultsPerPage"
           control={control}
@@ -35,13 +41,14 @@ function SearchFrom() {
             <NonLinearSlider defaultValue={value} onChange={onChange} />
           )}
         />
-        <Button
-          label="SEARCH"
-          variant="normal"
-          onClickHandler={handleSubmit(onSubmit)}
-        />
-      </form>
-    </div>
+        <Divider />
+      </div>
+      <Button
+        label="SEARCH"
+        variant="normal"
+        onClickHandler={handleSubmit(onSubmit)}
+      />
+    </form>
   );
 }
 

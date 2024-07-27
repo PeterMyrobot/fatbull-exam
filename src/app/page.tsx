@@ -6,8 +6,8 @@ import React from 'react';
 
 function homePage() {
   return (
-    <div className="bg-background flex h-full w-full flex-row">
-      <div className="flex-1 px-[130px]">
+    <div className="flex h-full w-full flex-row bg-background">
+      <div className="flex-1 px-[130px] pb-[84px] pt-[54px]">
         <SearchFrom />
       </div>
       <Profile />
