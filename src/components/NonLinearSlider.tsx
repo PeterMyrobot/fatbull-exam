@@ -57,7 +57,7 @@ function NonLinearSlider({ defaultValue, onChange }: NonLinearSliderProps) {
           <div
             {...props}
             key={state.index}
-            className="bg-blackLight box-content h-[14px] w-[14px] translate-x-[-4px] translate-y-[-4px] cursor-pointer rounded-full border-[6px] border-[#FFD05D] outline-none"
+            className="bg-blackLight box-content h-[14px] w-[14px] translate-y-[-4px] cursor-pointer rounded-full border-[6px] border-[#FFD05D] outline-none"
           />
         )}
         marks={marks}
@@ -65,7 +65,7 @@ function NonLinearSlider({ defaultValue, onChange }: NonLinearSliderProps) {
           <div
             {...props}
             key={props.key}
-            className={`top-[28px] flex h-full cursor-pointer flex-col items-center text-base font-medium opacity-50 hover:opacity-100 ${props.key !== value ? 'opacity-50' : 'opacity-100'}`}
+            className={`top-[28px] flex h-full translate-x-[8px] cursor-pointer flex-col items-center text-base font-medium opacity-50 hover:opacity-100 ${props.key !== value ? 'opacity-50' : 'opacity-100'}`}
           >
             {valueMapper[Number(props.key)]}
           </div>
