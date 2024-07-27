@@ -11,9 +11,12 @@ const config: Config = {
       transparent: 'transparent',
       black: '#121212',
       blackLight: '#1B1B1B',
+      background: '#181818',
       white: '#fff',
       gray: ' #8A8A8F',
       orange: '#FF9B33',
+      profileGray: '#929292',
+      profileBorder: '#1F1F1F',
     },
     extend: {
       lineHeight: {
