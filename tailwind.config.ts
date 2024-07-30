@@ -17,6 +17,7 @@ const config: Config = {
       orange: '#FF9B33',
       profileGray: '#929292',
       profileBorder: '#1F1F1F',
+      resultsGray: '#B2B2B2',
     },
     extend: {
       lineHeight: {

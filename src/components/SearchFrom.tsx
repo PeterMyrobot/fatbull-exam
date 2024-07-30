@@ -20,7 +20,7 @@ function SearchFrom() {
   const currentResultsPerPage = watch('resultsPerPage');
   const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data);
   return (
-    <form className="flex h-full flex-col">
+    <form className="flex h-full flex-col pb-[84px] pt-[54px]">
       <div className="flex-1">
         <h1 className="mb-5 text-2xl leading-9">Search</h1>
         <Controller

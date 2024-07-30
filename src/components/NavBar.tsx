@@ -36,7 +36,7 @@ function NavBar() {
 
   const tabs = [
     { icon: <NavIcon />, text: 'HOME', path: '/' },
-    { icon: <NavIcon />, text: 'ABOUT', path: '/other' },
+    { icon: <NavIcon />, text: 'Tags', path: '/tags' },
   ];
 
   return (
@@ -52,7 +52,7 @@ function NavBar() {
       </div>
       <ul>
         {tabs.map((tab) => (
-          <li key={tab.text} className="w-full">
+          <li key={tab.text} className="mb-6 w-full">
             <Link
               href={tab.path}
               className="flex flex-col items-center justify-center"
@@ -60,9 +60,12 @@ function NavBar() {
               <NavIcon
                 className={`m-auto ${isActive(tab.path) ? 'text-white' : 'text-gray'}`}
               />
-              {isActive(tab.path) && (
-                <span className="text-xs leading-[18px]">{tab.text}</span>
-              )}
+
+              <span
+                className={`text-xs leading-[18px] ${isActive(tab.path) ? 'text-white' : 'text-blackLight'}`}
+              >
+                {tab.text}
+              </span>
             </Link>
           </li>
         ))}
