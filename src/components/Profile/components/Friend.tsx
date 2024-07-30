@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Button from '@/components/Button';
-import { TUser } from '@/service/followers/types';
+import { TUser } from '@/service/api/followers/types';
 
 function Friend({ name, username, avater, isFollowing }: TUser) {
   const [imgSrc, setImgSrc] = useState(avater);
@@ -19,7 +19,7 @@ function Friend({ name, username, avater, isFollowing }: TUser) {
         />
         <div className="ml-[15px]">
           <h3 className="font-bold text-white">{name}</h3>
-          <p className="text-profileGray text-sm">{`@${username}`}</p>
+          <p className="text-sm text-profileGray">{`@${username}`}</p>
         </div>
       </div>
       <Button

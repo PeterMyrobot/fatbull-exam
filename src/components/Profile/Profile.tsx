@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import followers from '@/service/followers/followers.json';
-import following from '@/service/followers/following.json';
+import followers from '@/service/api/followers/followers.json';
+import following from '@/service/api/followers/following.json';
 import Friends from './components/Friends';
 
 function Profile() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { TUser } from '@/service/followers/types';
+import { TUser } from '@/service/api/followers/types';
 import Friend from './Friend';
 
 function Friends({ friends }: { friends: TUser[] }) {
