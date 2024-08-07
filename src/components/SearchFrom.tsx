@@ -10,7 +10,7 @@ export type FormValues = {
   resultsPerPage: number;
 };
 
-function SearchFrom() {
+function SearchFrom({ onSearch }: { onSearch: (data: FormValues) => void }) {
   const { handleSubmit, control, watch } = useForm<FormValues>({
     defaultValues: {
       keyword: '',
@@ -18,11 +18,11 @@ function SearchFrom() {
     },
   });
   const currentResultsPerPage = watch('resultsPerPage');
-  const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<FormValues> = (data) => onSearch(data);
   return (
     <form className="flex h-full flex-col pb-[84px] pt-[54px]">
-      <div className="flex-1">
-        <h1 className="mb-5 text-2xl leading-9">Search</h1>
+      <div className="flex flex-1 flex-col gap-5">
+        <h1 className="text-2xl leading-9">Search</h1>
         <Controller
           name="keyword"
           control={control}
@@ -32,8 +32,12 @@ function SearchFrom() {
         />
         <Divider />
         <h1 className="text-2xl leading-9"># of results per page</h1>
-        <span>{currentResultsPerPage}</span>
-        <span>results</span>
+        <h1 className="text-5xl font-bold leading-[72px]">
+          {currentResultsPerPage}
+          <span className="ml-[10px] text-base font-normal leading-4">
+            results
+          </span>
+        </h1>
         <Controller
           name="resultsPerPage"
           control={control}

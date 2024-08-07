@@ -9,7 +9,7 @@ type NavIconProps = {
   className?: string;
 };
 
-function NavIcon(props: NavIconProps) {
+export function NavIcon(props: NavIconProps) {
   const { className = '' } = props;
   return (
     <svg
@@ -28,29 +28,28 @@ function NavIcon(props: NavIconProps) {
     </svg>
   );
 }
+export const tabs = [
+  { icon: <NavIcon />, text: 'HOME', path: '/' },
+  { icon: <NavIcon />, text: 'Tags', path: '/tags' },
+];
 
 function NavBar() {
   const pathname = usePathname();
 
   const isActive = (path: string) => path === pathname;
 
-  const tabs = [
-    { icon: <NavIcon />, text: 'HOME', path: '/' },
-    { icon: <NavIcon />, text: 'Tags', path: '/tags' },
-  ];
-
   return (
-    <div className="relative h-full w-20 bg-blackLight">
-      <div className="flex h-[88px] w-full">
+    <div className="relative h-[70px] w-full bg-blackLight sm:h-full sm:w-20">
+      <div className="flex h-full w-full sm:h-[88px]">
         <Image
-          className="m-auto"
+          className="ml-[21px] sm:m-auto"
           src="./assets/svgs/logo.svg"
           alt="logo"
           width={35}
           height={15}
         />
       </div>
-      <ul>
+      <ul className="hidden sm:block">
         {tabs.map((tab) => (
           <li key={tab.text} className="mb-6 w-full">
             <Link

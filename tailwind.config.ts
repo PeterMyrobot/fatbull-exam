@@ -19,6 +19,10 @@ const config: Config = {
       profileBorder: '#1F1F1F',
       resultsGray: '#B2B2B2',
     },
+    screens: {
+      sm: '640px',
+      '2xl': '1440px',
+    },
     extend: {
       lineHeight: {
         '14': '14px',

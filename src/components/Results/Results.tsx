@@ -26,14 +26,22 @@ function Arrow(props: ArrowProps) {
   );
 }
 
-function Results() {
+function Results({ handleGoBack, handleChange }) {
   const onClickHandler = () => {
+    handleChange();
     console.log('clicked');
   };
   return (
     <div className="flex h-full flex-col pt-[92px]">
       <div className="relative flex items-center">
-        <Arrow className="absolute left-[-47px] cursor-pointer" />
+        <button
+          className="absolute left-[-47px] cursor-pointer p-2"
+          onClick={handleGoBack}
+          type="button"
+          aria-label="goBack"
+        >
+          <Arrow className="" />
+        </button>
         <h1 className="text-3xl leading-[45px]">Results</h1>
       </div>
       <div className="flex h-4/5 w-[725px] flex-wrap gap-x-[34px] gap-y-[30px] overflow-scroll">

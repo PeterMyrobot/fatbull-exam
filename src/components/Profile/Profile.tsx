@@ -15,7 +15,7 @@ function Profile() {
     },
   ];
   return (
-    <div className="h-full w-[375px] bg-blackLight pt-8">
+    <div className="hidden h-full w-[375px] bg-blackLight pt-8 2xl:block">
       <Tabs
         className="relative h-full overflow-hidden"
         defaultIndex={tabIndex}
