@@ -1,22 +1,15 @@
 import React from 'react';
 import tags from '@/service/api/tags/tags.json';
+import Tag from './components/Tag';
 
 function page() {
   return (
-    <div className="flex w-full flex-col items-center justify-center pt-20">
-      <div className="w-[846px]">
-        <h1 className="w-full text-left text-3xl leading-[45px]">Tags</h1>
-        <div className="flex flex-wrap gap-x-6 gap-y-9">
+    <div className="flex h-full w-full flex-col items-center justify-center bg-background pt-20">
+      <div className="flex flex-col overflow-hidden md:w-[846px]">
+        <h1 className="mb-6 w-full text-left text-3xl leading-[45px]">Tags</h1>
+        <div className="no-scrollbar flex flex-1 flex-wrap gap-x-6 gap-y-9 overflow-scroll pb-5">
           {tags.map((tag) => (
-            <div key={tag.id} className="h-[199px] w-[150px]">
-              <div className="h-[150px] w-[150px] rounded-lg bg-white/5">
-                <div>
-                  <span>{tag.name}</span>
-                </div>
-                <span>{tag.name}</span>
-                <span>{tag.count} Result</span>
-              </div>
-            </div>
+            <Tag key={tag.id} tag={tag} />
           ))}
         </div>
       </div>

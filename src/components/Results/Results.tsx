@@ -44,7 +44,7 @@ function Results({ handleGoBack, handleChange }) {
         </button>
         <h1 className="text-3xl leading-[45px]">Results</h1>
       </div>
-      <div className="flex h-4/5 w-[725px] flex-wrap gap-x-[34px] gap-y-[30px] overflow-scroll">
+      <div className="no-scrollbar flex h-4/5 w-[725px] flex-wrap gap-x-[34px] gap-y-[30px] overflow-scroll">
         {followers.data.map((follower) => (
           <Result
             key={follower.id}
