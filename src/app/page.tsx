@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import _ from 'lodash';
 
+import { FormValues } from '@/app/types';
+
 import Profile from '@/components/Profile/Profile';
 import Results from '@/components/Results/Results';
 import SearchFrom from '@/components/SearchFrom';
@@ -10,7 +12,7 @@ import SearchFrom from '@/components/SearchFrom';
 function HomePage() {
   const [searchParams, setSearchParams] = useState({});
 
-  const handleSearch = (data) => {
+  const handleSearch = (data: FormValues) => {
     setSearchParams(data);
   };
 

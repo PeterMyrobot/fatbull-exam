@@ -26,7 +26,12 @@ function Arrow(props: ArrowProps) {
   );
 }
 
-function Results({ handleGoBack, handleChange }) {
+type ResultsProps = {
+  handleGoBack: () => void;
+  handleChange: () => void;
+};
+
+function Results({ handleGoBack, handleChange }: ResultsProps) {
   const onClickHandler = () => {
     handleChange();
     console.log('clicked');

@@ -1,14 +1,11 @@
 import React from 'react';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
+import { FormValues } from '@/app/types';
+
 import Input from './Input';
 import Button from './Button';
 import NonLinearSlider from './NonLinearSlider';
 import Divider from './Divider';
-
-export type FormValues = {
-  keyword: string;
-  resultsPerPage: number;
-};
 
 function SearchFrom({ onSearch }: { onSearch: (data: FormValues) => void }) {
   const { handleSubmit, control, watch } = useForm<FormValues>({
