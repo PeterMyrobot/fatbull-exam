@@ -53,7 +53,7 @@ function Results({ handleGoBack, handleChange }: ResultsProps) {
         {followers.data.map((follower) => (
           <Result
             key={follower.id}
-            title={follower.name}
+            name={follower.name}
             username={follower.username}
             avater={follower.avater}
           />

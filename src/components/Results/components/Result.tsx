@@ -1,7 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
+import { TUser } from '@/service/api/followers/types';
 
-function Result({ title, username, avater }) {
+type ResultProps = Omit<TUser, 'id' | 'isFollowing'>;
+
+function Result({ name, username }: ResultProps) {
   // const [imgSrc, setImgSrc] = React.useState(avater);
   return (
     <div>
@@ -18,7 +21,7 @@ function Result({ title, username, avater }) {
         // }}
       />
 
-      <h2 className="mt-3 text-[15px]">{title}</h2>
+      <h2 className="mt-3 text-[15px]">{name}</h2>
       <h3 className="text-[11px] text-resultsGray">by {username}</h3>
     </div>
   );
