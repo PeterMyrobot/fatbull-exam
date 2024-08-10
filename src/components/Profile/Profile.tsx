@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import followers from '@/service/api/followers/followers.json';

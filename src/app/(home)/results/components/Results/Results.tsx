@@ -1,7 +1,7 @@
 import React from 'react';
 import followers from '@/service/api/followers/followers.json';
+import Button from '@/components/Button';
 import Result from './components/Result';
-import Button from '../Button';
 
 type ArrowProps = {
   className?: string;

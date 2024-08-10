@@ -1,11 +1,13 @@
+'use client';
+
 import React from 'react';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { FormValues } from '@/common/types';
 
-import Input from './Input';
-import Button from './Button';
-import NonLinearSlider from './NonLinearSlider';
-import Divider from './Divider';
+import Input from '@/components/Input';
+import Button from '@/components/Button';
+import NonLinearSlider from '@/components/NonLinearSlider';
+import Divider from '@/components/Divider';
 
 function SearchFrom({ onSearch }: { onSearch: (data: FormValues) => void }) {
   const { handleSubmit, control, watch } = useForm<FormValues>({
@@ -17,7 +19,7 @@ function SearchFrom({ onSearch }: { onSearch: (data: FormValues) => void }) {
   const currentResultsPerPage = watch('resultsPerPage');
   const onSubmit: SubmitHandler<FormValues> = (data) => onSearch(data);
   return (
-    <form className="flex h-full flex-col pb-[84px] pt-[54px]">
+    <form className="flex h-full w-full flex-col pb-[84px] pt-[54px]">
       <div className="flex flex-1 flex-col gap-5">
         <h1 className="text-2xl leading-9">Search</h1>
         <Controller

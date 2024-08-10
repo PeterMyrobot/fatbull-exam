@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import Profile from '@/components/Profile/Profile';
 import NavBar from '../components/NavBar';
 import MobileNavBar from '../components/MobileNavBar';
 
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={`${inter.className} flex h-screen flex-col sm:flex-row`}>
         <NavBar />
         <div className="h-screen flex-1 flex-row">{children}</div>
+        <Profile />
         <MobileNavBar />
       </body>
     </html>

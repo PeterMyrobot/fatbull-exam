@@ -29,14 +29,19 @@ export function NavIcon(props: NavIconProps) {
   );
 }
 export const tabs = [
-  { icon: <NavIcon />, text: 'HOME', path: '/' },
-  { icon: <NavIcon />, text: 'Tags', path: '/tags' },
+  {
+    icon: <NavIcon />,
+    text: 'HOME',
+    path: '/search',
+    paths: ['/search', '/results'],
+  },
+  { icon: <NavIcon />, text: 'Tags', path: '/tags', paths: ['/tags'] },
 ];
 
 function NavBar() {
   const pathname = usePathname();
 
-  const isActive = (path: string) => path === pathname;
+  const isActive = (paths: string[]) => paths.includes(pathname);
 
   return (
     <div className="relative h-[70px] w-full bg-blackLight sm:h-full sm:w-20">
@@ -57,11 +62,11 @@ function NavBar() {
               className="flex flex-col items-center justify-center"
             >
               <NavIcon
-                className={`m-auto ${isActive(tab.path) ? 'text-white' : 'text-gray'}`}
+                className={`m-auto ${isActive(tab.paths) ? 'text-white' : 'text-gray'}`}
               />
 
               <span
-                className={`text-xs leading-[18px] ${isActive(tab.path) ? 'text-white' : 'text-blackLight'}`}
+                className={`text-xs leading-[18px] ${isActive(tab.paths) ? 'text-white' : 'text-blackLight'}`}
               >
                 {tab.text}
               </span>

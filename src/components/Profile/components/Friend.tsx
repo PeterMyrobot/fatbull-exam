@@ -11,7 +11,7 @@ function Friend({ name, username, avater, isFollowing }: TUser) {
         <Image
           width={40}
           height={40}
-          src={imgSrc}
+          src="/assets/images/default-avatar.png"
           alt="avatar"
           onError={() => {
             setImgSrc('/assets/images/default-avatar.png');
