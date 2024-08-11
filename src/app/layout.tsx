@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Inter } from 'next/font/google';
+import { usePathname } from 'next/navigation';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import './globals.css';
 import LayoutContentProvider, {
@@ -15,6 +16,9 @@ const inter = Inter({ subsets: ['latin'] });
 
 function LayoutContent({ children }: Readonly<{ children: React.ReactNode }>) {
   const { isMobile } = useLayoutContext();
+  const pathname = usePathname();
+
+  const shouldShowProfile = ['/search', '/results'].includes(pathname);
   if (isMobile) {
     return <MobileNavBar>{children}</MobileNavBar>;
   }
@@ -22,7 +26,7 @@ function LayoutContent({ children }: Readonly<{ children: React.ReactNode }>) {
     <>
       <NavBar />
       <div className="h-screen flex-1 flex-row">{children}</div>
-      <Profile />
+      {shouldShowProfile && <Profile />}
     </>
   );
 }
