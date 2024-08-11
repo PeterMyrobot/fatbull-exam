@@ -5,16 +5,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import NavIcon from '@/components/Icons/NavIcon';
+import NavIconComponent from '@/components/Icons/NavIcon';
 
 export const tabs = [
   {
-    icon: <NavIcon />,
+    icon: <NavIconComponent />,
     text: 'HOME',
     path: '/search',
     paths: ['/search', '/results'],
   },
-  { icon: <NavIcon />, text: 'Tags', path: '/tags', paths: ['/tags'] },
+  { icon: <NavIconComponent />, text: 'Tags', path: '/tags', paths: ['/tags'] },
 ];
 
 function NavBar() {
@@ -40,7 +40,7 @@ function NavBar() {
               href={tab.path}
               className="flex flex-col items-center justify-center"
             >
-              <NavIcon
+              <NavIconComponent
                 className={`m-auto ${isActive(tab.paths) ? 'text-white' : 'text-gray'}`}
               />
 

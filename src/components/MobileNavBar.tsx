@@ -6,8 +6,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
-import NavIcon from '@/components/Icons/NavIcon';
-import Arrow from '@/components/Icons/arrowIcon';
+import NavIconComponent from '@/components/Icons/NavIcon';
+import ArrowIconComponent from '@/components/Icons/Arrow';
 import { tabs } from './NavBar';
 
 function MobileNavBar({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -34,13 +34,13 @@ function MobileNavBar({ children }: Readonly<{ children: React.ReactNode }>) {
           />
         ) : (
           <button
-            className="flex cursor-pointer items-center pl-[19px]"
+            className="flex h-[70px] cursor-pointer items-center pl-[19px]"
             onClick={handleGoBack}
             type="button"
             aria-label="goBack"
           >
             <div className="ml-[13px] flex h-[26px] w-[26px] items-center justify-center">
-              <Arrow />
+              <ArrowIconComponent />
             </div>
             <h1 className="text-3xl leading-[45px]">Home page</h1>
           </button>
@@ -55,7 +55,7 @@ function MobileNavBar({ children }: Readonly<{ children: React.ReactNode }>) {
               className="w-6items-center flex h-6 justify-center"
             >
               <Link href={tab.path}>
-                <NavIcon
+                <NavIconComponent
                   className={`m-auto ${isActive(tab.path) ? 'text-white' : 'text-gray'}`}
                 />
               </Link>

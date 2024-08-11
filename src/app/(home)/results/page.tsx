@@ -49,7 +49,7 @@ function ResultsContent() {
   }, [params, mutate]); // Empty dependency array ensures this runs only once
 
   return (
-    <div className="flex h-full w-full flex-row bg-background">
+    <div className="flex w-full flex-1 flex-row overflow-hidden bg-background sm:h-full">
       <Results
         data={results}
         handleGetNextPage={handleGetNextPage}
