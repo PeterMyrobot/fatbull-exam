@@ -23,11 +23,11 @@ function LayoutContent({ children }: Readonly<{ children: React.ReactNode }>) {
     return <MobileNavBar>{children}</MobileNavBar>;
   }
   return (
-    <>
+    <div className="flex w-full flex-col sm:flex-row">
       <NavBar />
       <div className="h-screen flex-1 flex-row">{children}</div>
       {shouldShowProfile && <Profile />}
-    </>
+    </div>
   );
 }
 
