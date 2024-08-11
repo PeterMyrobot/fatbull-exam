@@ -7,7 +7,7 @@ import useGetSearchMutation from './hooks/useGetSearchMutation';
 
 import Results from './components/Results/Results';
 
-function ResultsPage() {
+function ResultsContent() {
   const router = useRouter();
   const hasInitFetch = useRef(false);
   const searchParams = useSearchParams();
@@ -50,14 +50,20 @@ function ResultsPage() {
 
   return (
     <div className="flex h-full w-full flex-row bg-background px-[130px]">
-      <Suspense fallback={<div>Loading...</div>}>
-        <Results
-          data={results}
-          handleGetNextPage={handleGetNextPage}
-          handleGoBack={handleGoBack}
-        />
-      </Suspense>
+      <Results
+        data={results}
+        handleGetNextPage={handleGetNextPage}
+        handleGoBack={handleGoBack}
+      />
     </div>
+  );
+}
+
+function ResultsPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ResultsContent />
+    </Suspense>
   );
 }
 
