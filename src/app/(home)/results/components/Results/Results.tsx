@@ -1,5 +1,6 @@
 import React from 'react';
-import followers from '@/service/api/followers/followers.json';
+import { TResult } from '@/service/api/search/types';
+
 import Button from '@/components/Button';
 import Result from './components/Result';
 
@@ -27,13 +28,14 @@ function Arrow(props: ArrowProps) {
 }
 
 type ResultsProps = {
+  data: TResult[];
   handleGoBack: () => void;
-  handleChange: () => void;
+  handleGetNextPage: () => void;
 };
 
-function Results({ handleGoBack, handleChange }: ResultsProps) {
+function Results({ data, handleGoBack, handleGetNextPage }: ResultsProps) {
   const onClickHandler = () => {
-    handleChange();
+    handleGetNextPage();
     console.log('clicked');
   };
   return (
@@ -50,17 +52,21 @@ function Results({ handleGoBack, handleChange }: ResultsProps) {
         <h1 className="text-3xl leading-[45px]">Results</h1>
       </div>
       <div className="no-scrollbar flex h-4/5 w-[725px] flex-wrap gap-x-[34px] gap-y-[30px] overflow-scroll">
-        {followers.data.map((follower) => (
+        {data.map((result) => (
           <Result
-            key={follower.id}
-            name={follower.name}
-            username={follower.username}
-            avater={follower.avater}
+            key={result.id}
+            name={result.name}
+            username={result.username}
+            avater={result.avater}
           />
         ))}
-      </div>
-      <div className="flex flex-1 items-end">
-        <Button label="MORE" variant="normal" onClickHandler={onClickHandler} />
+        <div className="flex flex-1 items-end">
+          <Button
+            label="MORE"
+            variant="normal"
+            onClickHandler={onClickHandler}
+          />
+        </div>
       </div>
     </div>
   );

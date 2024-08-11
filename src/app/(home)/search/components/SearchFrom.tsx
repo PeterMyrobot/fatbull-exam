@@ -13,10 +13,10 @@ function SearchFrom({ onSearch }: { onSearch: (data: FormValues) => void }) {
   const { handleSubmit, control, watch } = useForm<FormValues>({
     defaultValues: {
       keyword: '',
-      resultsPerPage: 12,
+      pageSize: 12,
     },
   });
-  const currentResultsPerPage = watch('resultsPerPage');
+  const currentResultsPerPage = watch('pageSize');
   const onSubmit: SubmitHandler<FormValues> = (data) => onSearch(data);
   return (
     <form className="flex h-full w-full flex-col pb-[84px] pt-[54px]">
@@ -38,7 +38,7 @@ function SearchFrom({ onSearch }: { onSearch: (data: FormValues) => void }) {
           </span>
         </h1>
         <Controller
-          name="resultsPerPage"
+          name="pageSize"
           control={control}
           render={({ field: { onChange, value } }) => (
             <NonLinearSlider defaultValue={value} onChange={onChange} />

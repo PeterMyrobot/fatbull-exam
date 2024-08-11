@@ -1,4 +1,4 @@
 export type FormValues = {
   keyword: string;
-  resultsPerPage: number;
+  pageSize: number;
 };

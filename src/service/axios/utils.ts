@@ -4,7 +4,7 @@ export const JWT_TOKEN_KEY = 'token';
 
 export function createAxiosInstance() {
   const axiosInstance = axios.create({
-    baseURL: process.env.REACT_APP_API_URL,
+    baseURL: process.env.NEXT_PUBLIC_API_URL,
 
     timeout: 64000,
   });
