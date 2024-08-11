@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { TGetSearchResponse, TResult } from '@/service/api/search/types';
 import useGetSearchMutation from './hooks/useGetSearchMutation';
@@ -48,17 +48,15 @@ function ResultsPage() {
     };
   }, [params, mutate]); // Empty dependency array ensures this runs only once
 
-  // if (isPending) {
-  //   return <div>Loading...</div>;
-  // }
-
   return (
     <div className="flex h-full w-full flex-row bg-background px-[130px]">
-      <Results
-        data={results}
-        handleGetNextPage={handleGetNextPage}
-        handleGoBack={handleGoBack}
-      />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Results
+          data={results}
+          handleGetNextPage={handleGetNextPage}
+          handleGoBack={handleGoBack}
+        />
+      </Suspense>
     </div>
   );
 }
