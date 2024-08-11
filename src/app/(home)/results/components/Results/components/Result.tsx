@@ -14,7 +14,7 @@ function Result({ name, username }: ResultProps) {
         width={219}
         height={146}
         // objectFit=""
-        className="w-full object-cover sm:h-[146px] sm:w-[219px]"
+        className="h-[222px] w-full object-cover sm:h-[146px] sm:w-[219px]"
 
         // onError={() => {
         //   setImgSrc('');

@@ -15,7 +15,7 @@ function Search() {
     router.push(`/results?${params.toString()}`);
   };
   return (
-    <div className="flex h-full w-full flex-row bg-background px-5 py-5 sm:px-[130px]">
+    <div className="flex w-full flex-1 flex-row bg-background px-5 pb-6 pt-0 sm:h-full sm:px-[130px] sm:pb-[84px] sm:pt-[54px]">
       <SearchFrom onSearch={onSearch} />
     </div>
   );

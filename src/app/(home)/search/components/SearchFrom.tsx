@@ -3,6 +3,7 @@
 import React from 'react';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { FormValues } from '@/common/types';
+import { useLayoutContext } from '@/context/LayoutContextProvider';
 
 import Input from '@/components/Input';
 import Button from '@/components/Button';
@@ -10,6 +11,7 @@ import NonLinearSlider from '@/components/NonLinearSlider';
 import Divider from '@/components/Divider';
 
 function SearchFrom({ onSearch }: { onSearch: (data: FormValues) => void }) {
+  const { isMobile } = useLayoutContext();
   const { handleSubmit, control, watch } = useForm<FormValues>({
     defaultValues: {
       keyword: '',
@@ -19,9 +21,9 @@ function SearchFrom({ onSearch }: { onSearch: (data: FormValues) => void }) {
   const currentResultsPerPage = watch('pageSize');
   const onSubmit: SubmitHandler<FormValues> = (data) => onSearch(data);
   return (
-    <form className="flex h-full w-full flex-col pb-[84px] pt-[54px]">
-      <div className="flex flex-1 flex-col gap-5">
-        <h1 className="text-2xl leading-9">Search</h1>
+    <form className="flex h-full w-full flex-col">
+      <div className="flex flex-1 flex-col sm:gap-5">
+        <h1 className="mb-4 text-2xl leading-9 sm:mb-0">Search</h1>
         <Controller
           name="keyword"
           control={control}
@@ -29,9 +31,11 @@ function SearchFrom({ onSearch }: { onSearch: (data: FormValues) => void }) {
             <Input value={value} onChange={onChange} placeholder={name} />
           )}
         />
-        <Divider />
-        <h1 className="text-2xl leading-9"># of results per page</h1>
-        <h1 className="text-5xl font-bold leading-[72px]">
+        {!isMobile && <Divider />}
+        <h1 className="mb-4 mt-7 text-2xl leading-9 sm:mb-0 sm:mt-0">
+          # of results per page
+        </h1>
+        <h1 className="mb-4 h-[50px] text-5xl font-bold sm:mb-0">
           {currentResultsPerPage}
           <span className="ml-[10px] text-base font-normal leading-4">
             results
@@ -44,8 +48,10 @@ function SearchFrom({ onSearch }: { onSearch: (data: FormValues) => void }) {
             <NonLinearSlider defaultValue={value} onChange={onChange} />
           )}
         />
-        <Divider />
+        {!isMobile && <Divider />}
       </div>
+
+      {isMobile && <Divider className="mb-20" />}
       <Button
         label="SEARCH"
         variant="normal"

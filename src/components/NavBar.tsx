@@ -33,7 +33,7 @@ function NavBar() {
           height={15}
         />
       </div>
-      <ul className="hidden sm:block">
+      <ul className="hidden sm:mt-[7px] sm:block">
         {tabs.map((tab) => (
           <li key={tab.text} className="mb-6 w-full">
             <Link
