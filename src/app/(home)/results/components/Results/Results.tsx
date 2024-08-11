@@ -2,30 +2,8 @@ import React from 'react';
 import { TResult } from '@/service/api/search/types';
 
 import Button from '@/components/Button';
+import Arrow from '@/components/Icons/arrowIcon';
 import Result from './components/Result';
-
-type ArrowProps = {
-  className?: string;
-};
-
-function Arrow(props: ArrowProps) {
-  const { className = '' } = props;
-
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={22}
-      height={22}
-      fill="none"
-      className={className}
-    >
-      <path
-        fill="#fff"
-        d="M13.27 2.103 11.333.167.5 11l10.833 10.833 1.937-1.937L4.374 11l8.896-8.897Z"
-      />
-    </svg>
-  );
-}
 
 type ResultsProps = {
   data: TResult[];
@@ -39,7 +17,7 @@ function Results({ data, handleGoBack, handleGetNextPage }: ResultsProps) {
     console.log('clicked');
   };
   return (
-    <div className="flex h-full flex-col pt-[92px]">
+    <div className="mx-auto flex h-full flex-col sm:px-[50px] sm:pt-[92px]">
       <div className="relative flex items-center">
         <button
           className="absolute left-[-47px] cursor-pointer p-2"
@@ -51,7 +29,7 @@ function Results({ data, handleGoBack, handleGetNextPage }: ResultsProps) {
         </button>
         <h1 className="text-3xl leading-[45px]">Results</h1>
       </div>
-      <div className="no-scrollbar flex h-4/5 w-[725px] flex-wrap gap-x-[34px] gap-y-[30px] overflow-scroll">
+      <div className="no-scrollbar flex flex-col overflow-scroll sm:h-4/5 sm:max-w-[725px] sm:flex-row sm:flex-wrap sm:gap-x-[34px] sm:gap-y-[30px]">
         {data.map((result) => (
           <Result
             key={result.id}
